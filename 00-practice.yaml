@@ -1,3 +1,4 @@
+---
 - name: install and run nginx
   hosts: DB
   become: yes
@@ -6,7 +7,8 @@
       ansible.builtin.dnf:
         name: nginx
         state: latest
-    - name: services need to start
+    - name: start nginx
       ansible.builtin.service:
         name: nginx
         enabled: yes
+        state: started
