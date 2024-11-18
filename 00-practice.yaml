@@ -2,7 +2,7 @@
 - name: variables
   hosts: localhost
   vars:
-    couse: "ansible"
+    course: "ansible"
     trainer: "Sivakumar"
     Duration: "150Hrs"
   task:
