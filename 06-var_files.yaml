@@ -6,4 +6,4 @@
   tasks:
     - name: variable file overwrite
       ansible.builtin.debug:
-        msg: "Hi I am learning course{{course}}, from trainer{{trainer}}, duration is {{duration}}."
+        msg: "Hi I am learning course {{course}}, from trainer {{trainer}}, duration is {{duration}}."
