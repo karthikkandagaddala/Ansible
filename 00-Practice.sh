@@ -18,8 +18,8 @@ validate () {
     fi
 }
 dnf install mysql -y
-validate ($? "Installing mysql")
+validate ( $? "Installing mysql" )
 dnf install nginx -y
-validate ($? "Installing nginx")
+validate ( $? "Installing nginx" )
 dnf remove mysql -y
-validate ($? "Removing mysql")
+validate ( $? "Removing mysql" )
