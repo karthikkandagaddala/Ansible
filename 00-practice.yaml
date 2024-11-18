@@ -1,14 +1,11 @@
 ---
-- name: install nginx and run
-  hosts: web
-  become: yes
-  tasks:
-    - name: install nginx
-      ansible.builtin.dnf:
-        name: nginx
-        state: installed
-    - name: start service
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: yes
+- name: variables
+  hosts: localhost
+  vars:
+    couse: "ansible"
+    trainer: "Sivakumar"
+    Duration: "150Hrs"
+  task:
+    - name: variables
+      ansible.builtin.debug:
+        msg: "Hi I am learning {{course}}, from trainer {{trainer}}, and duration is {{Duration}}"
