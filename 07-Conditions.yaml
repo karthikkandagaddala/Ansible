@@ -9,7 +9,7 @@
       ignore_errors: true
     - name: print user information
       ansible.builtin.debug:
-        msg: "user info:  {{user}}"
+        msg: "user info: {{user}}"
     - name: create user
       ansible.builtin.command: user add expense
       when: user.rc !=0
