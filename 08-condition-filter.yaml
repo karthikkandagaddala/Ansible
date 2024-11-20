@@ -2,7 +2,7 @@
 - name: check number
   hosts: localhost
   vars_prompt: #prompt are always consider as text as string
-    - name: number
+    - name: number #this will act as variable in the o/p it will ask number
       prompt: please enter number
       private: no
   tasks:
