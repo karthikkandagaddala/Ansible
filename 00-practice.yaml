@@ -1,7 +1,7 @@
 ---
 - name: variables
   hosts: localhost
-  vars_files: -var_files
+  vars_files: -vars.yaml
   tasks:
     - name: to print variables
       ansible.builtin.debug:
