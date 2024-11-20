@@ -1,7 +1,6 @@
 ---
 - name: Addition of Two Numbers
   hosts: localhost
-  gather_facts: no
   vars_prompt:
     - name: "num1"
       prompt: "Please enter the first number"
