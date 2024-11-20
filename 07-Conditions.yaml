@@ -12,7 +12,7 @@
         msg: "user info: {{user}}"
     - name: create user
       ansible.builtin.command: user add expense
-      when: user.rc !=0
+      when: user.rc != 0
     - name: say hello
       ansible.builtin.debug:
         msg: "hello"
