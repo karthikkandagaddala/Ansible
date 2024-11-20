@@ -1,5 +1,5 @@
 ---
-- name: Addition of Two Numbers
+- name: Addition of Multiple Numbers
   hosts: localhost
   gather_facts: no
   vars_prompt:
@@ -8,6 +8,9 @@
       private: no
     - name: "num2"
       prompt: "Please enter the second number"
+      private: no
+    - name: "num3"
+      prompt: "Please enter the third number"
       private: no
 
   tasks:
@@ -19,10 +22,14 @@
       set_fact:
         num2_int: "{{ num2 | int }}"
 
-    - name: Add the two numbers
+    - name: Ensure num3 is an integer
       set_fact:
-        result: "{{ num1_int + num2_int }}"
+        num3_int: "{{ num3 | int }}"
+
+    - name: Add the three numbers
+      set_fact:
+        result: "{{ num1_int + num2_int + num3_int }}"
 
     - name: Display the result
       debug:
-        msg: "The sum of {{ num1_int }} and {{ num2_int }} is {{ result }}"
+        msg: "The sum of {{ num1_int }}, {{ num2_int }}, and {{ num3_int }} is {{ result }}"
