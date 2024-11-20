@@ -2,9 +2,9 @@
 userid=$(id -u)
 if [ $userid -ne 0 ]
 then
-     echo "PLease Proceed with Sudo Access"
+     echo "Please start with Sudo Acess"
      exit 1
-else 
+else
      echo "Your a super user"
 fi
 validate () {
@@ -13,13 +13,12 @@ validate () {
          echo "$2 is ....Failure"
          exit 1
     else
-         echo "$2 is ....Success"
-         
+         echo "$2 is .....Success"
     fi
 }
-dnf install mysql -y
-validate $? "Installing mysql"
+dnf install ansible -y
+validate ( $? "Installing ansible" )
 dnf install nginx -y
-validate $? "Installing nginx"
-dnf remove mysql -y
-validate $? "Removing mysql"
+validate ( $? "Installing nginx" )
+dnf remove nginx -y
+validate ( $? "Removing nginx" )
