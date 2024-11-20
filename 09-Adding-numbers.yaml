@@ -1,0 +1,22 @@
+---
+- name: Addition of Two Numbers
+  hosts: localhost
+  gather_facts: no
+  vars_prompt:
+    - name: "num1"
+      prompt: "Please enter the first number"
+      private: no
+      type: int
+    - name: "num2"
+      prompt: "Please enter the second number"
+      private: no
+      type: int
+
+  tasks:
+    - name: Add the two numbers
+      set_fact:
+        result: "{{ num1 + num2 }}"
+
+    - name: Display the result
+      debug:
+        msg: "The sum of {{ num1 }} and {{ num2 }} is {{ result }}"
