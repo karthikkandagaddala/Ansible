@@ -11,9 +11,12 @@
       private: no
 
   tasks:
-    - name: Convert input to integers
+    - name: Ensure num1 is an integer
       set_fact:
         num1_int: "{{ num1 | int }}"
+
+    - name: Ensure num2 is an integer
+      set_fact:
         num2_int: "{{ num2 | int }}"
 
     - name: Add the two numbers
