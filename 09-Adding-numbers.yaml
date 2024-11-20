@@ -16,5 +16,5 @@
         result: "{{ num1 | int + num2 | int }}"
 
     - name: Display the result
-      debug:
+      ansible.builtin.debug:
         msg: "The sum of {{ num1 }} and {{ num2 }} is {{ result }}"
