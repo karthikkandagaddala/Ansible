@@ -17,8 +17,8 @@ validate () {
     fi
 }
 dnf install ansible -y
-validate ( $? "Installing ansible" )
+validate $? "Installing ansible"
 dnf install nginx -y
-validate ( $? "Installing nginx" )
+validate $? "Installing nginx"
 dnf remove nginx -y
-validate ( $? "Removing nginx" )
+validate $? "Removing nginx"
